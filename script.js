@@ -60,3 +60,13 @@ backToTop.addEventListener("click", () => {
 function showMessage() {
     alert("Hello! Thanks for visiting my website! 👋");
 }
+// Say Hello Message
+
+function showMessage() {
+    const message = document.getElementById("hello-message");
+
+    message.textContent =
+        "💙 Hello! Thanks for visiting my website. Have a great day! 👋";
+
+    message.style.display = "block";
+}
