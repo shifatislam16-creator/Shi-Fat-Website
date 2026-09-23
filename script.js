@@ -55,3 +55,8 @@ backToTop.addEventListener("click", () => {
         behavior: "smooth"
     });
 });
+// Say Hello Button
+
+function showMessage() {
+    alert("Hello! Thanks for visiting my website! 👋");
+}
