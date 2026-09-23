@@ -12,7 +12,6 @@ let deleting = false;
 const typingText = document.getElementById("typing-text");
 
 function typeEffect() {
-
     const currentText = texts[textIndex];
 
     if (!deleting) {
@@ -24,7 +23,6 @@ function typeEffect() {
             setTimeout(typeEffect, 1500);
             return;
         }
-
     } else {
         typingText.textContent = currentText.substring(0, charIndex - 1);
         charIndex--;
@@ -35,7 +33,25 @@ function typeEffect() {
         }
     }
 
-    setTimeout(typeEffect, deleting ? 50 : 100);
+    setTimeout(typeEffect, deleting ? 70 : 120);
 }
 
 typeEffect();
+// Back to Top Button
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+        backToTop.style.display = "block";
+    } else {
+        backToTop.style.display = "none";
+    }
+});
+
+backToTop.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+    });
+});
